@@ -17,50 +17,86 @@
         <section class="cadastro__cliente">
             <h1 class="cadastro__cliente__titulo">Cadastro de Cliente</h1>
         
-            <div class="cadastro__pai">
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Izabella">
+            <div class="cadastro">
+                <div class="cadastro__pai perfil">
+                    <h2>Perfil</h2>
+                    <div class="cadastro-input nome">
+                        <p class="cadastro-input__titulo">Nome</p>
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Izabella">
+                    </div>
+                    <div class="cadastro-input sobrenome">
+                        <p class="cadastro-input__titulo">Sobrenome</p>
+                        <input type="text" class="cadastro-input__text" id="input-sobrenome" placeholder="Ex: Vizoto">
+                    </div>
+                    <div class="cadastro-input cpf">
+                        <p class="cadastro-input__titulo">CPF</p>
+                        <input type="text" class="cadastro-input__text" id="input-cpf" placeholder="Ex: 123.123.123-12">
+                    </div>
+                    <div class="cadastro-input data__nascimento">
+                        <p class="cadastro-input__titulo">Data de nascimento</p>
+                        <input type="date" class="cadastro-input__text" id="input-dataNasc" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input nomeResp">
+                        <p class="cadastro-input__titulo">Nome do Responsável</p>
+                        <input type="text" class="cadastro-input__text" id="input-nomeResp" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input cpfResp">
+                        <p class="cadastro-input__titulo">CPF do Responsável</p>
+                        <input type="text" class="cadastro-input__text" id="input-cpfResp" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input email">
+                        <p class="cadastro-input__titulo">Email</p>
+                        <input type="email" class="cadastro-input__text" id="input-email" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input numCelular">
+                        <p class="cadastro-input__titulo">Número de Celular <label>(com ddd)</label></p>
+                        <input type="text" class="cadastro-input__text" id="input-numeroCelular" placeholder="Ex: (15) 99999-9999">
+                    </div>
                 </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Sobrenome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Vizoto">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">CPF</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: 123.123.123-12">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">CEP</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Logradouro</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Nome</p>
-                    <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
+
+                <div class="cadastro__pai endereco">
+                    <h2>Endereço</h2>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">CEP</p>
+                        <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex: 18077-090">
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Estado</p>
+                        <input type="text" class="cadastro-input__text" id="input-estado" readonly>
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Cidade</p>
+                        <input type="text" class="cadastro-input__text" id="input-cidade" readonly>
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Rua</p>
+                        <input type="text" class="cadastro-input__text" id="input-rua" readonly>
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Bairro</p>
+                        <input type="text" class="cadastro-input__text" id="input-bairro" readonly>
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Número</p>
+                        <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex: 210">
+                    </div>
+                    
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Nome</p>
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Nome</p>
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Nome</p>
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Nome</p>
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
+                    </div>
                 </div>
             </div>
         </section>
