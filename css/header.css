@@ -1,33 +1,8 @@
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(214, 214, 214);
-    margin: 0.5em 0.3em;
-    border-radius: 14px;
-}
-
-.container{
-    display: flex;
-    align-items: center;
+.cabecalho{
+    text-align: center;
 }
 
 .container__logo{
-    width: 100px;
-    height: 70px;
-}
-
-.cabecalho__menu-hamburguer{
-    width: 2.5em;
-    height: 2.5em;
-    background: url("/img/Menu.svg");
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.dir{
-    display: flex;
-    gap: 2em;
-    padding: 1em;
+    width: 150px;
+    height: 120px;
 }
