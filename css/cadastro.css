@@ -58,9 +58,40 @@ body{
     font-size: 10px;
 }
 
-
-
+#selectSexo{
+    width: 93.5%;
+    font-size: 16px;
+    padding: 11px;
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
 
 .nomeResp, .cpfResp{
     display: none;
+}
+
+
+
+@media screen and (min-width:720px) {
+    .cadastro__pai{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "titulo titulo"
+            "item1 item2"
+            "item3 item4"
+            "item5 item6"
+            "item7 item8";
+
+        width: 80%;
+    }
+
+    .cadastro__pai h2{
+        grid-area: titulo;
+    }
+
+    #selectSexo{
+        width: 93.5%;
+    }
+
 }

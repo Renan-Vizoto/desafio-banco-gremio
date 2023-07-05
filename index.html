@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Banco Gremio</title>
 </head>
 <body>
@@ -13,12 +14,11 @@
         <img src="/img/logopng.png" alt="Logo no header" class="container__logo">
     </header>
 
-    <main>
-        <section class="cadastro__cliente">
-            <h1 class="cadastro__cliente__titulo">Cadastro de Cliente</h1>
-        
-            <div class="cadastro">
-                <div class="cadastro__pai perfil">
+    <section class="cadastro__cliente">
+        <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
+    
+        <div class="cadastro">
+            <div class="cadastro__pai perfil">
                     <h2>Perfil</h2>
                     <div class="cadastro-input nome">
                         <p class="cadastro-input__titulo">Nome</p>
@@ -46,15 +46,32 @@
                     </div>
                     <div class="cadastro-input email">
                         <p class="cadastro-input__titulo">Email</p>
-                        <input type="email" class="cadastro-input__text" id="input-email" placeholder="Ex: João">
+                        <input type="email" class="cadastro-input__text" id="input-email" placeholder="Ex: joao@gmail.com">
+                    </div>
+                    <div class="cadastro-input senha">
+                        <p class="cadastro-input__titulo">Senha</p>
+                        <input type="password" class="cadastro-input__text" id="input-senha">
+                        <span id="passwordHelpInline" class="form-text">
+                            Must be 8-20 characters long.
+                        </span>
                     </div>
                     <div class="cadastro-input numCelular">
-                        <p class="cadastro-input__titulo">Número de Celular <label>(com ddd)</label></p>
+                        <p class="cadastro-input__titulo">Número de Celular <label></label></p>
                         <input type="text" class="cadastro-input__text" id="input-numeroCelular" placeholder="Ex: (15) 99999-9999">
+                        <span id="passwordHelpInline" class="form-text">
+                            Com ddd
+                        </span>
                     </div>
-                </div>
-
-                <div class="cadastro__pai endereco">
+                    <div class="cadastro-input sexo">
+                        <p class="cadastro-input__titulo">Sexo</p>
+                        <select id="selectSexo">
+                            <option disabled selected>Selecione seu sexo</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="cadastro__pai endereco">
                     <h2>Endereço</h2>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">CEP</p>
@@ -81,25 +98,17 @@
                         <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex: 210">
                     </div>
                     
-                    <div class="cadastro-input">
-                        <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                    </div>
-                    <div class="cadastro-input">
-                        <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                    </div>
-                    <div class="cadastro-input">
-                        <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                    </div>
-                    <div class="cadastro-input">
-                        <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: João">
-                    </div>
-                </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <input type="button" value="Cadastrar-se">
+    </section>
+    
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
+    "></script>
 </body>
 </html>
