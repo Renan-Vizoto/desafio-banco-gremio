@@ -23,7 +23,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 2em;
-    width: 70%;
+    width: 88%;
     border: 1px solid gray;
     padding: 1.1em;
     border-radius: 10px;
@@ -48,7 +48,7 @@ body{
 }
 
 .cadastro-input__text{
-    width: 93.5%;
+    width: 100%;
     border: 0.5px solid black;
     border-radius: 4px;
     padding: 0.7em;
@@ -59,7 +59,7 @@ body{
 }
 
 #selectSexo{
-    width: 93.5%;
+    width: 100%;
     font-size: 16px;
     padding: 11px;
     border: 0.5px solid black;
@@ -88,6 +88,17 @@ body{
 }
 
 
+#input-estado,
+#input-cidade,
+#input-rua,
+#input-bairro,
+#input-credito{
+    background-color: rgb(241, 241, 241);
+    opacity: 50%;
+}
+
+
+
 @media screen and (min-width:720px) {
     .cadastro__pai{
         display: grid;
@@ -110,6 +121,43 @@ body{
         width: 93.5%;
     }
 
+    .perfil .cadastro-input:nth-child(1){
+        order: 1;
+    }
+    .perfil .cadastro-input:nth-child(2){
+        order: 2;
+    }
+    .perfil .cadastro-input:nth-child(3){
+        order: 3;
+    }
+    .perfil .cadastro-input:nth-child(4){
+        order: 4;
+    }
+    .perfil .cadastro-input:nth-child(5){
+        order: 5;
+    }
+    .perfil .cadastro-input:nth-child(6){
+        order: 6;
+    }
+    .perfil .cadastro-input:nth-child(7){
+        order: 7;
+    }
+    .perfil .cadastro-input:nth-child(8){
+        order: 8;
+    }
+    .perfil .cadastro-input:nth-child(9){
+        order: 10;
+    }
+    .perfil .cadastro-input:nth-child(10){
+        order: 11;
+    }
+    .perfil .cadastro-input:nth-child(11){
+        order: 9;
+    }
+    .perfil .cadastro-input:nth-child(12){
+        order: 12;
+    }
+
 }
 
 
@@ -118,4 +166,26 @@ body{
         width: 45%;
         grid-template-rows: repeat(4, auto)  1fr ;
     }
+
+    .salario{
+        width: 60%;
+    }
+}
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+  
+#fixed-input {
+  width: 20%;
+  background-color: #eee;
+  border-radius: 8px 0 0 8px ;
+  text-align: center;
+}
+  
+#input-salario {
+  width: 80%;
+  border-radius: 0 8px 8px 0;
 }
