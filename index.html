@@ -18,71 +18,71 @@
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
     
-        <div class="cadastro">
-            <div class="cadastro__pai perfil">
+        <form id="formulario">
+            <div class="cadastro">
+                <div class="cadastro__pai perfil">
                     <h2>Perfil</h2>
                     <div class="cadastro-input nome">
                         <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Izabella">
+                        <input type="text" class="cadastro-input__text"id="input-nome"placeholder="Ex:Izabella" required minlength="2">
                     </div>
                     <div class="cadastro-input sobrenome">
                         <p class="cadastro-input__titulo">Sobrenome</p>
-                        <input type="text" class="cadastro-input__text" id="input-sobrenome" placeholder="Ex: Vizoto">
+                        <input type="text" class="cadastro-input__text" id="input-sobrenome"placeholder="Ex:Vizoto" required>
                     </div>
                     <div class="cadastro-input cpf">
                         <p class="cadastro-input__titulo">CPF</p>
-                        <input maxlength="14" minlength="11" type="text" class="cadastro-input__text" id="input-cpf" placeholder="Ex: 123.123.123-12">
+                        <input maxlength="14" minlength="11" type="text"class="cadastro-input__text"id="input-cpf" placeholder="Ex: 123.123.123-12" required>
                     </div>
                     <div class="cadastro-input data__nascimento">
                         <p class="cadastro-input__titulo">Data de nascimento</p>
-                        <input type="date" class="cadastro-input__text" id="input-dataNasc" placeholder="Ex: João">
+                        <input type="date" class="cadastro-input__text" id="input-dataNasc"placeholder="Ex:João" required>
                     </div>
                     <div class="cadastro-input nomeResp">
                         <p class="cadastro-input__titulo">Nome do Responsável</p>
-                        <input type="text" class="cadastro-input__text" id="input-nomeResp" placeholder="Ex: João">
+                        <input type="text" class="cadastro-input__text" id="input-nomeResp"placeholder="Ex:João">
                     </div>
                     <div class="cadastro-input cpfResp">
                         <p class="cadastro-input__titulo">CPF do Responsável</p>
-                        <input type="text" class="cadastro-input__text" id="input-cpfResp" placeholder="Ex: João">
+                        <input type="text" class="cadastro-input__text" id="input-cpfResp"placeholder="Ex:João">
                     </div>
                     <div class="cadastro-input email">
                         <p class="cadastro-input__titulo">Email</p>
-                        <input type="email" class="cadastro-input__text" id="input-email" placeholder="Ex: joao@gmail.com">
+                        <input type="email" class="cadastro-input__text" id="input-email"placeholder="Ex:joao@gmail.com" required>
                     </div>
                     <div class="cadastro-input senha">
                         <p class="cadastro-input__titulo">Senha</p>
-                        <input type="password" class="cadastro-input__text" id="input-senha">
+                        <input type="password" class="cadastro-input__text" id="input-senha"maxlength="7"required>
                         <span id="passwordHelpInline" class="form-text">
                             Must be 8-20 characters long.
                         </span>
                     </div>
                     <div class="cadastro-input senha2">
                         <p class="cadastro-input__titulo">Confirme sua Senha</p>
-                        <input type="password" class="cadastro-input__text" id="input-senha2">
+                        <input type="password" class="cadastro-input__text" id="input-senha2" required>
                     </div>
                     <div class="cadastro-input numCelular">
                         <p class="cadastro-input__titulo">Número de Celular <label></label></p>
-                        <input type="tel" class="cadastro-input__text" id="input-numeroCelular" placeholder="Ex: (15) 99999-9999">
+                        <input type="tel" class="cadastro-input__text" id="input-numeroCelular"placeholder="Ex:(15) 99999-9999" required>
                         <span id="passwordHelpInline" class="form-text">
-                            Com ddd
+                            Com DDD
                         </span>
                     </div>
                     <div class="cadastro-input sexo">
                         <p class="cadastro-input__titulo">Sexo</p>
-                        <select id="selectSexo">
+                        <select id="selectSexo" required>
                             <option disabled selected>Selecione seu sexo</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select>
                     </div>
-            </div>
-
+                </div>
             
-            <div class="cadastro__pai endereco">
+                <div class="cadastro__pai endereco">
                     <h2>Endereço</h2>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">CEP</p>
-                        <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex: 11818-090">
+                        <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex:11818-090" required>
                     </div>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">Estado</p>
@@ -102,30 +102,37 @@
                     </div>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">Número</p>
-                        <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex: 210">
-                    </div>
-                    
-            </div>
-
-
-            <div class="cadastro__pai salario">
-                <h2>Informações Financeiras</h2>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Qual seu salário atual?</p>
-                    <div class="input-container">
-                        <input type="text" class="cadastro-input__text" id="fixed-input" value="R$" readonly>
-                        <input type="text" class="cadastro-input__text" id="input-salario">
+                        <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex:210">
                     </div>
                 </div>
-                <div class="cadastro-input">
-                    <p class="cadastro-input__titulo">Limite inicial do cartão de crédito</p>
-                    <input type="text" class="cadastro-input__text" id="input-credito" readonly>
+                <div class="cadastro__pai salario">
+                    <h2>Informações Financeiras</h2>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Qual seu salário atual?</p>
+                        <div class="input-container">
+                            <input type="text" class="cadastro-input__text" id="fixed-input" value="R$" readonly>
+                            <input type="text" class="cadastro-input__text" id="input-salario">
+                        </div>
+                    </div>
+                    <div class="cadastro-input">
+                        <p class="cadastro-input__titulo">Limite inicial do cartão de crédito</p>
+                        <input type="text" class="cadastro-input__text" id="input-credito" readonly>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <input type="button" value="Cadastrar-se" class="botao" id="botao">
+        </form>
+        <button form="formulario" type="submit" id="botao" class="botao">Cadastre-se</button>
+        
     </section>
+
+    <form id="meu-formulario">
+        <!-- campos do formulário -->
+        <input type="text" name="nome" required>
+        <input type="email" name="email" required>
+        
+        <!-- botão de envio -->
+        <button type="submit">Enviar</button>
+    </form>
       
     
     <footer>

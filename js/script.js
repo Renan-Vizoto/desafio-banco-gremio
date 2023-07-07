@@ -103,3 +103,8 @@ function calcCredito() {
 
     document.getElementById('input-credito').value = `R$ ${credito}`
 }
+
+
+//botao
+
+  
