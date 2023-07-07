@@ -105,6 +105,61 @@ function calcCredito() {
 }
 
 
-//botao
+//senha
+const senha = document.getElementById('input-senha')
+const confirmaSenha = document.getElementById('input-senha2')
+const mensagemSenha = document.getElementById("mensagem-senha");
 
-  
+
+confirmaSenha.addEventListener('blur', confir)
+
+function confir(){
+    if(senha.value == confirmaSenha.value){
+        mensagemSenha.style.display = "none";
+        console.log('senha certa');
+    }
+    else{
+        console.log('senha errada');
+        mensagemSenha.style.display = "block";
+    }
+}
+
+//data
+
+const inputDate = document.getElementById('input-dataNasc');
+const errorMessage = document.getElementById('error-message');
+const minDate = new Date('1900-01-01');
+const maxDate = new Date('2050-12-31');
+
+inputDate.addEventListener('blur', function() {
+    const selectedDate = new Date(inputDate.value);
+
+    if (selectedDate < minDate || selectedDate > maxDate) {
+        errorMessage.style.display = 'block';
+        console.log('a')
+        preventDefault();
+    } else {
+        errorMessage.style.display = 'none';
+        console.log('b')
+    }
+});
+
+
+//validar
+const formulario = document.getElementById('formulario');
+const senhav = document.getElementById('input-senha')
+const confirmaSenhav = document.getElementById('input-senha2')
+const mensagemSenhav = document.getElementById("mensagem-senha");
+
+formulario.addEventListener('submit', function(event) {
+    if(confirmaSenhav.value !== senhav.value){
+        event.preventDefault();
+        mensagemSenhav.style.backgroundColor = 'yellow';
+        console.log('senha errada');
+    }
+    else{
+        console.log('senha certa');
+        mensagemSenhav.style.backgroundColor = 'yellow';
+    }
+});
+

@@ -2,6 +2,7 @@ body{
     background-color: #5f768c38 !important;
 }
 
+
 .cadastro__cliente{
     display: flex;
     flex-direction: column;
@@ -68,6 +69,10 @@ body{
 
 .nomeResp, .cpfResp{
     display: none;
+}
+
+.botaum{
+    text-align: center;
 }
 
 .botao{
