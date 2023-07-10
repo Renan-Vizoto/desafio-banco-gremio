@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon"> 
+    <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="/js/script.js" defer></script>
     <title>Banco Gremio</title>
 </head>
+
 <body>
     <header class="cabecalho">
         <img src="/img/logopng.png" alt="Logo no header" class="container__logo">
@@ -17,56 +19,65 @@
 
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
-    
+
         <form id="formulario">
             <div class="cadastro">
                 <div class="cadastro__pai perfil">
                     <h2>Perfil</h2>
                     <div class="cadastro-input nome">
                         <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex:Izabella" required minlength="2" maxlength="20">
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Izabella"
+                            required minlength="2" maxlength="20">
                     </div>
                     <div class="cadastro-input sobrenome">
                         <p class="cadastro-input__titulo">Sobrenome</p>
-                        <input type="text" class="cadastro-input__text" id="input-sobrenome"placeholder="Ex:Vizoto" minlength="2" maxlength="80" required>
+                        <input type="text" class="cadastro-input__text" id="input-sobrenome" placeholder="Ex: Vizoto"
+                            minlength="2" maxlength="80" required>
                     </div>
                     <div class="cadastro-input cpf">
                         <p class="cadastro-input__titulo">CPF</p>
-                        <input type="text"class="cadastro-input__text"id="input-cpf" placeholder="Ex: 123.123.123-12" required>
+                        <input type="text" class="cadastro-input__text" id="input-cpf" placeholder="Ex: 123.123.123-12"
+                            required>
                         <p id="erro-mensagemCPF" style="color: red; display: none;">CPF Inválido.</p>
                     </div>
                     <div class="cadastro-input data__nascimento">
                         <p class="cadastro-input__titulo">Data de nascimento</p>
-                        <input type="date" class="cadastro-input__text" id="input-dataNasc"placeholder="Ex:João" required min="1900-01-01">
-                        <p id="error-message" style="color: red; display: none;">Data inválida. Insira uma data entre 1900 e 2023.</p>
+                        <input type="date" class="cadastro-input__text" id="input-dataNasc"
+                        required min="1900-01-01">
+                        <p id="error-message" style="color: red; display: none;">Data inválida. Insira uma data entre
+                            1900 e 2023.</p>
                     </div>
-                    <div class="cadastro-input nomeResp">
+
+                    <div class="cadastro-input" id="nomeResp">
                         <p class="cadastro-input__titulo">Nome do Responsável</p>
-                        <input type="text" class="cadastro-input__text" id="input-nomeResp"placeholder="Ex:João">
+                        <input type="text" class="cadastro-input__text" id="inputNomeResp" placeholder="Ex: João">
                     </div>
-                    <div class="cadastro-input cpfResp">
+                    <div class="cadastro-input" id="cpfResp">
                         <p class="cadastro-input__titulo">CPF do Responsável</p>
-                        <input type="text" class="cadastro-input__text" id="input-cpfResp"placeholder="Ex:João">
+                        <input type="text" class="cadastro-input__text" id="inputCpfResp" placeholder="Ex: 123.123.123-12">
+                        <p id="erro-mensagemCPF" style="color: red; display: none;">CPF Inválido.</p>
                     </div>
+
                     <div class="cadastro-input email">
                         <p class="cadastro-input__titulo">Email</p>
-                        <input type="email" class="cadastro-input__text" id="input-email"placeholder="Ex:joao@gmail.com" minlength="8" maxlength="80" required>
+                        <input type="email" class="cadastro-input__text" id="input-email"
+                            placeholder="Ex: joao@gmail.com" minlength="8" maxlength="80" required>
                     </div>
                     <div class="cadastro-input senha">
                         <p class="cadastro-input__titulo">Senha</p>
-                        <input type="password" class="cadastro-input__text" id="input-senha" minlength="8" maxlength="20">
-                        <span id="passwordHelpInline" class="form-text">
-                            Must be 8-20 characters long.
-                        </span>
+                        <input type="password" class="cadastro-input__text" id="input-senha" minlength="8"
+                            maxlength="20" required>
                     </div>
                     <div class="cadastro-input senha2">
                         <p class="cadastro-input__titulo">Confirme sua Senha</p>
-                        <input type="password" class="cadastro-input__text" id="input-senha2" minlength="8" maxlength="20" required>
+                        <input type="password" class="cadastro-input__text" id="input-senha2" minlength="8"
+                            maxlength="20" required>
                         <p id="mensagem-senha" style="color: red; display: none;">As senhas não correspondem.</p>
                     </div>
                     <div class="cadastro-input numCelular">
                         <p class="cadastro-input__titulo">Número de Celular <label></label></p>
-                        <input type="tel" class="cadastro-input__text" id="input-numeroCelular"placeholder="Ex:(15) 99999-9999" required>
+                        <input type="tel" class="cadastro-input__text" id="input-numeroCelular"
+                            placeholder="Ex: (15) 99999-9999" required>
                         <span id="passwordHelpInline" class="form-text">
                             Com DDD
                         </span>
@@ -80,12 +91,13 @@
                         </select>
                     </div>
                 </div>
-            
+
                 <div class="cadastro__pai endereco">
                     <h2>Endereço</h2>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">CEP</p>
-                        <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex:11818-090" required>
+                        <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex: 11818-090"
+                            required>
                     </div>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">Estado</p>
@@ -105,7 +117,8 @@
                     </div>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">Número</p>
-                        <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex:210" required minlength="1" maxlength="9">
+                        <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex: 210"
+                            required minlength="1" maxlength="9">
                     </div>
                 </div>
 
@@ -128,8 +141,16 @@
                 <button form="formulario" type="submit" id="botao" class="botao">Cadastre-se</button>
             </div>
         </form>
+        <form>
+            <input type="text" required>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
-    
+
+
+
+
+
     <footer>
 
     </footer>
@@ -137,4 +158,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
     "></script>
 </body>
+
 </html>

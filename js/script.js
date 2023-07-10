@@ -1,131 +1,33 @@
-document.getElementById('input-cep').addEventListener("blur", chamaAPI)
-
-async function chamaAPI(){
-    let cep = document.querySelector('#input-cep').value
-
-    const apiViaCep = 'https://viacep.com.br/ws/'+ cep + '/json/'
-
-    const resCep = await fetch(apiViaCep)   
-    const data = await resCep.json() 
-
-    if(data.erro == true)
-        alert("CEP Inválido!");
-    else {
-        document.getElementById('input-estado').value = `${data.uf}`
-        document.getElementById('input-cidade').value = `${data.localidade}`
-        document.getElementById('input-rua').value = `${data.logradouro}`
-        document.getElementById('input-bairro').value = `${data.bairro}`
-    }
-}
+//CEP
+let formataCep = document.getElementById('input-cep')
+formataCep.addEventListener("input", function(){
+    formatarCEP(formataCep)
+})
+let chamaCep = document.getElementById('input-cep')
+chamaCep.addEventListener("blur", function(){
+    chamaAPI(chamaCep)
+});
 
 //Numero Celular
-const inputTelefone = document.getElementById('input-numeroCelular');
-
+const inputTelefone = document.getElementById('input-numeroCelular')
 inputTelefone.addEventListener('input', formatarTelefone);
-
-function formatarTelefone() {
-    let valor = inputTelefone.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    let novoTelefone = '';
-
-    if (valor.length > 0) {
-        novoTelefone += '(' + valor.substring(0, 2);
-    }
-
-    if (valor.length > 2) {
-        novoTelefone += ') ' + valor.substring(2, 7);
-    }
-
-    if (valor.length > 7) {
-        novoTelefone += '-' + valor.substring(7, 11);
-    }
-
-    inputTelefone.value = novoTelefone;
-}
-
 
 //CPF
 const inputCPF = document.getElementById('input-cpf');
-
-inputCPF.addEventListener('input', formatarCPF);
-
-function formatarCPF() {
-    let valor = inputCPF.value.replace(/\D/g, '');
-    let novoCPF = '';
-
-    if (valor.length > 0) {
-        novoCPF += '' + valor.substring(0, 3);
-    }
-
-    if (valor.length > 3) {
-        novoCPF += '.' + valor.substring(3, 6);
-    }
-
-    if (valor.length > 6) {
-        novoCPF += '.' + valor.substring(6, 9);
-    }
-
-    if (valor.length > 9) {
-        novoCPF += '-' + valor.substring(9, 11);
-    }
-
-    inputCPF.value = novoCPF;
-}
-
-
-//CEP
-const inputCEP = document.getElementById('input-cep')
-
-inputCEP.addEventListener('input', formatarCEP)
-
-function formatarCEP() {
-    let valor = inputCEP.value.replace(/\D/g, '');
-
-    let novoCEP = '';
-
-    if(valor.length > 0){
-        novoCEP += '' + valor.substring(0, 5)
-    }
-
-    if(valor.length > 5){
-        novoCEP += '-' + valor.substring(5, 8)
-    }
-
-    inputCEP.value = novoCEP
-}
+inputCPF.addEventListener('input', function(){
+    formatarCPF(inputCPF)
+});
 
 //salario
 document.getElementById('input-salario').addEventListener('input', calcCredito)
 
-function calcCredito() {
-    let valor = document.querySelector("#input-salario").value * 0.4
-
-    let credito = valor.toFixed(2).replace('.', ',');
-
-    document.getElementById('input-credito').value = `R$ ${credito}`
-}
-
-
 //senha
 const senha = document.getElementById('input-senha')
 const confirmaSenha = document.getElementById('input-senha2')
+confirmaSenha.addEventListener('blur', confir)
 const mensagemSenha = document.getElementById("mensagem-senha");
 
-
-confirmaSenha.addEventListener('blur', confir)
-
-function confir(){
-    if(senha.value == confirmaSenha.value){
-        mensagemSenha.style.display = "none";
-        console.log('senha certa');
-    }
-    else{
-        console.log('senha errada');
-        mensagemSenha.style.display = "block";
-    }
-}
-
 //data
-
 const inputDate = document.getElementById('input-dataNasc');
 const errorMessage = document.getElementById('error-message');
 const minDate = new Date('1900-01-01');
@@ -205,9 +107,154 @@ let strCPF = document.getElementById('input-cpf')
 strCPF.addEventListener('blur',function() {
     validarCPF(strCPF)
 });
-
 let validade = 1;
 
+
+//menor de idade
+let calculaDataNasc = document.getElementById('input-dataNasc');
+calculaDataNasc.addEventListener('blur', calculaIdade);
+let dataAtual = new Date();
+const divNomeResp = document.getElementById('nomeResp');
+const divCpfResp = document.getElementById('cpfResp')
+const inputNomeResp = document.getElementById('inputNomeResp');
+const inputCpfResp = document.getElementById('inputCpfResp');
+
+//nome Responsavel
+inputNomeResp.addEventListener("keypress", function(novoNome) {
+  const key = String.fromCharCode(novoNome.keyCode);
+
+  if (/[^a-zA-Z]/.test(key)) {
+    novoNome.preventDefault();
+  }
+});
+
+//novo cpf responsavel
+const erroMensagemCPF2 = document.getElementById('erro-mensagemCPF');
+inputCpfResp.addEventListener('blur',function() {
+    validarCPF(inputCpfResp)
+});
+
+//CPF Responsavel
+inputCpfResp.addEventListener('input', function(){
+    formatarCPF(inputCpfResp)
+});
+
+
+
+
+
+
+
+//CEP
+async function chamaAPI(chamaCep){
+    let novoCep = chamaCep.value
+
+    const apiViaCep = 'https://viacep.com.br/ws/'+ novoCep + '/json/'
+
+    const resCep = await fetch(apiViaCep)   
+    const data = await resCep.json() 
+
+    if(data.erro == true)
+        alert("CEP Inválido!");
+    else {
+        document.getElementById('input-estado').value = `${data.uf}`
+        document.getElementById('input-cidade').value = `${data.localidade}`
+        document.getElementById('input-rua').value = `${data.logradouro}`
+        document.getElementById('input-bairro').value = `${data.bairro}`
+    }
+}
+
+function formatarCEP(cep) {
+    let valor = cep.value.replace(/\D/g, '');
+
+    let novoCEP = '';
+
+    if(valor.length > 0){
+        novoCEP += '' + valor.substring(0, 5)
+    }
+
+    if(valor.length > 5){
+        novoCEP += '-' + valor.substring(5, 8)
+    }
+
+    cep.value = novoCEP
+}
+
+
+//FORMATAR CELULAR
+function formatarTelefone() {
+    let valor = inputTelefone.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    let novoTelefone = '';
+
+    if (valor.length > 0) {
+        novoTelefone += '(' + valor.substring(0, 2);
+    }
+
+    if (valor.length > 2) {
+        novoTelefone += ') ' + valor.substring(2, 7);
+    }
+
+    if (valor.length > 7) {
+        novoTelefone += '-' + valor.substring(7, 11);
+    }
+
+    inputTelefone.value = novoTelefone;
+}
+
+
+//CONFIRMA SENHA
+function confir(){
+    if(senha.value == confirmaSenha.value){
+        mensagemSenha.style.display = "none";
+        console.log('senha certa');
+    }
+    else{
+        console.log('senha errada');
+        mensagemSenha.style.display = "block";
+    }
+}
+
+
+//CALCULA IDADE
+function calculaIdade(){
+    let dataNasc = new Date(calculaDataNasc.value);
+    const idadeMilissegundos = dataAtual - dataNasc;
+    const idadeAnos = Math.floor(idadeMilissegundos / (365.25 * 24 * 60 * 60 * 1000));
+    
+    if(idadeAnos < 18){
+        divNomeResp.style.display = 'block';
+        inputNomeResp.required = true;
+
+        divCpfResp.style.display = 'block'
+        inputCpfResp.required = true;
+    }
+};
+
+//FORMATAR CPF
+function formatarCPF(cpf) {
+    let valor = cpf.value.replace(/\D/g, '');
+    let novoCPF = '';
+
+    if (valor.length > 0) {
+        novoCPF += '' + valor.substring(0, 3);
+    }
+
+    if (valor.length > 3) {
+        novoCPF += '.' + valor.substring(3, 6);
+    }
+
+    if (valor.length > 6) {
+        novoCPF += '.' + valor.substring(6, 9);
+    }
+
+    if (valor.length > 9) {
+        novoCPF += '-' + valor.substring(9, 11);
+    }
+
+    cpf.value = novoCPF;
+}
+
+//VALIDAR CPF
 function validarCPF(cpf) {	
 	cpf = cpf.value.replace(/\.|-/g,'');
 	if(cpf == '') return false;	
@@ -267,3 +314,12 @@ form.addEventListener('submit', function(event) {
         event.preventDefault();
     }
 });
+
+//CALCULA CRÉDITO
+function calcCredito() {
+    let valor = document.querySelector("#input-salario").value * 0.4
+
+    let credito = valor.toFixed(2).replace('.', ',');
+
+    document.getElementById('input-credito').value = `R$ ${credito}`
+}
