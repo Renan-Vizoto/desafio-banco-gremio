@@ -1,4 +1,4 @@
-document.getElementById('input-cep').addEventListener("input", chamaAPI)
+document.getElementById('input-cep').addEventListener("blur", chamaAPI)
 
 async function chamaAPI(){
     let cep = document.querySelector('#input-cep').value
@@ -129,7 +129,8 @@ function confir(){
 const inputDate = document.getElementById('input-dataNasc');
 const errorMessage = document.getElementById('error-message');
 const minDate = new Date('1900-01-01');
-const maxDate = new Date('2050-12-31');
+const maxDate = new Date();
+const form = document.getElementById('formulario');
 
 inputDate.addEventListener('blur', function() {
     const selectedDate = new Date(inputDate.value);
@@ -141,6 +142,16 @@ inputDate.addEventListener('blur', function() {
     } else {
         errorMessage.style.display = 'none';
         console.log('b')
+    }
+});
+
+form.addEventListener('submit', function(event) {
+    const selectedDate = new Date(inputDate.value);
+
+    if (selectedDate > maxDate) {
+        errorMessage.style.display = 'block';
+        console.log('c');
+        event.preventDefault();
     }
 });
 
@@ -163,3 +174,96 @@ formulario.addEventListener('submit', function(event) {
     }
 });
 
+
+//nome
+const inputNome = document.getElementById("input-nome");
+
+inputNome.addEventListener("keypress", function(novoNome) {
+  const key = String.fromCharCode(novoNome.keyCode);
+
+  if (/[^a-zA-Z]/.test(key)) {
+    novoNome.preventDefault();
+  }
+});
+
+//sobrenome
+const inputSobrenome = document.getElementById("input-sobrenome");
+
+inputSobrenome.addEventListener("keypress", function(novoSobrenome) {
+  const key = String.fromCharCode(novoSobrenome.keyCode);
+
+  if (/[^a-zA-Z\s]/.test(key)) {
+    novoSobrenome.preventDefault();
+  }
+});
+
+
+
+//novo cpf
+const erroMensagemCPF = document.getElementById('erro-mensagemCPF');
+let strCPF = document.getElementById('input-cpf')
+strCPF.addEventListener('blur',function() {
+    validarCPF(strCPF)
+});
+
+let validade = 1;
+
+function validarCPF(cpf) {	
+	cpf = cpf.value.replace(/\.|-/g,'');
+	if(cpf == '') return false;	
+	// Elimina CPFs invalidos conhecidos	
+	if (cpf.length != 11 || 
+		cpf == "00000000000" || 
+		cpf == "11111111111" || 
+		cpf == "22222222222" || 
+		cpf == "33333333333" || 
+		cpf == "44444444444" || 
+		cpf == "55555555555" || 
+		cpf == "66666666666" || 
+		cpf == "77777777777" || 
+		cpf == "88888888888" || 
+		cpf == "99999999999"){
+			alert('CPF Inválido')
+            erroMensagemCPF.style.display = 'block';
+            validade = 0;
+            return;           
+        }	
+	// Valida 1o digito	
+	add = 0;	
+	for (i=0; i < 9; i ++)		
+		add += parseInt(cpf.charAt(i)) * (10 - i);	
+		rev = 11 - (add % 11);	
+		if (rev == 10 || rev == 11)		
+			rev = 0;	
+		if (rev != parseInt(cpf.charAt(9))){	
+            alert('CPF Inválido')
+            erroMensagemCPF.style.display = 'block';
+            validade = 0;
+            return;
+        }	
+	// Valida 2o digito	
+	add = 0;	
+	for (i = 0; i < 10; i ++)		
+		add += parseInt(cpf.charAt(i)) * (11 - i);	
+	rev = 11 - (add % 11);	
+	if (rev == 10 || rev == 11)	
+		rev = 0;	
+	if (rev != parseInt(cpf.charAt(10))){
+        alert('CPF Inválido')
+        erroMensagemCPF.style.display = 'block';
+        validade = 0;
+        return;
+    }
+	else{
+        erroMensagemCPF.style.display = 'none';
+        return;
+    }
+
+};
+
+form.addEventListener('submit', function(event) {
+
+    if (validade == 0) {
+        event.preventDefault();
+    }
+});

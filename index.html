@@ -24,7 +24,7 @@
                     <h2>Perfil</h2>
                     <div class="cadastro-input nome">
                         <p class="cadastro-input__titulo">Nome</p>
-                        <input type="text" class="cadastro-input__text"id="input-nome"placeholder="Ex:Izabella" required minlength="2" maxlength="20">
+                        <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex:Izabella" required minlength="2" maxlength="20">
                     </div>
                     <div class="cadastro-input sobrenome">
                         <p class="cadastro-input__titulo">Sobrenome</p>
@@ -33,11 +33,12 @@
                     <div class="cadastro-input cpf">
                         <p class="cadastro-input__titulo">CPF</p>
                         <input type="text"class="cadastro-input__text"id="input-cpf" placeholder="Ex: 123.123.123-12" required>
+                        <p id="erro-mensagemCPF" style="color: red; display: none;">CPF Inválido.</p>
                     </div>
                     <div class="cadastro-input data__nascimento">
                         <p class="cadastro-input__titulo">Data de nascimento</p>
                         <input type="date" class="cadastro-input__text" id="input-dataNasc"placeholder="Ex:João" required min="1900-01-01">
-                        <p id="error-message" style="color: red; display: none;">Data inválida. Insira uma data entre 1900 e 2050.</p>
+                        <p id="error-message" style="color: red; display: none;">Data inválida. Insira uma data entre 1900 e 2023.</p>
                     </div>
                     <div class="cadastro-input nomeResp">
                         <p class="cadastro-input__titulo">Nome do Responsável</p>
@@ -107,6 +108,7 @@
                         <input type="text" class="cadastro-input__text" id="input-numeroCasa" placeholder="Ex:210" required minlength="1" maxlength="9">
                     </div>
                 </div>
+
                 <div class="cadastro__pai salario">
                     <h2>Informações Financeiras</h2>
                     <div class="cadastro-input">
