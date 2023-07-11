@@ -19,7 +19,10 @@
 
     <section class="cadastro__cliente">
         <h1 class="cadastro__cliente__titulo">Cadastro de Usuário</h1>
-
+        <div class="info">
+            <img src="/img/exclamation-circle-fill.svg">
+            <p>Escreva somente letras ou números, caracteres especiais são preenchidos automaticamente.</p>
+        </div>
         <form id="formulario">
             <div class="cadastro">
                 <div class="cadastro__pai perfil">
@@ -42,8 +45,7 @@
                     </div>
                     <div class="cadastro-input data__nascimento">
                         <p class="cadastro-input__titulo">Data de nascimento</p>
-                        <input type="date" class="cadastro-input__text" id="input-dataNasc"
-                        required min="1900-01-01">
+                        <input type="date" class="cadastro-input__text" id="input-dataNasc" required min="1900-01-01">
                         <p id="error-message" style="color: red; display: none;">Data inválida. Insira uma data entre
                             1900 e 2023.</p>
                     </div>
@@ -54,7 +56,8 @@
                     </div>
                     <div class="cadastro-input" id="cpfResp">
                         <p class="cadastro-input__titulo">CPF do Responsável</p>
-                        <input type="text" class="cadastro-input__text" id="inputCpfResp" placeholder="Ex: 123.123.123-12">
+                        <input type="text" class="cadastro-input__text" id="inputCpfResp"
+                            placeholder="Ex: 123.123.123-12">
                         <p id="erro-mensagemCPF" style="color: red; display: none;">CPF Inválido.</p>
                     </div>
 
@@ -137,6 +140,12 @@
                     </div>
                 </div>
             </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox">
+                <p>Declaro que li os <a href="#">termos de uso</a> e concordo que o Grêmio é o maior do Sul.</p>
+            </div>
+
             <div class="botaum">
                 <button form="formulario" type="submit" id="botao" class="botao">Cadastre-se</button>
             </div>
