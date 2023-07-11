@@ -211,6 +211,14 @@ body{
         order: 12;
     }
 
+    .credito{
+        margin-top: -1.1em;
+    }
+
+    .salarioo{
+        margin-top: 1em;
+    }
+
 }
 
 
@@ -222,6 +230,14 @@ body{
 
     .salario{
         width: 60%;
+    }
+
+    .credito{
+        margin-top: 0em;
+    }
+
+    .salarioo{
+        margin-top: 0%;
     }
 }
 
