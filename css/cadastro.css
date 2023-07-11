@@ -221,6 +221,16 @@ body{
 
 }
 
+@media screen and (min-width:834px) {
+    .credito{
+        margin-top: 0em;
+    }
+
+    .salarioo{
+        margin-top: 0%;
+    }
+}
+
 
 @media screen and (min-width:1280px) {
     .cadastro__pai{
@@ -230,14 +240,6 @@ body{
 
     .salario{
         width: 60%;
-    }
-
-    .credito{
-        margin-top: 0em;
-    }
-
-    .salarioo{
-        margin-top: 0%;
     }
 }
 
