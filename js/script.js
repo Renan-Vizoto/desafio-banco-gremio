@@ -67,12 +67,6 @@ const mensagemSenhav = document.getElementById("mensagem-senha");
 formulario.addEventListener('submit', function(event) {
     if(confirmaSenhav.value !== senhav.value){
         event.preventDefault();
-        mensagemSenhav.style.backgroundColor = 'yellow';
-        console.log('senha errada');
-    }
-    else{
-        console.log('senha certa');
-        mensagemSenhav.style.backgroundColor = 'yellow';
     }
 });
 
@@ -143,8 +137,6 @@ inputCpfResp.addEventListener('input', function(){
 
 
 
-
-
 //CEP
 async function chamaAPI(chamaCep){
     let novoCep = chamaCep.value
@@ -183,7 +175,7 @@ function formatarCEP(cep) {
 
 //FORMATAR CELULAR
 function formatarTelefone() {
-    let valor = inputTelefone.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    let valor = inputTelefone.value.replace(/\D/g, '');
     let novoTelefone = '';
 
     if (valor.length > 0) {

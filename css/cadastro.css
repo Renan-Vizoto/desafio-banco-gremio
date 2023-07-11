@@ -4,7 +4,10 @@ body{
 
 .info{
     display: flex;
+    justify-content: center;
     gap: 10px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .info p{
@@ -72,6 +75,24 @@ body{
     font-size: 10px;
 }
 
+.perfil img,
+.endereco img{
+    width: 0.9em;
+    margin: 0 0.3em 0.1em 0;
+}
+
+#input-email::placeholder{
+    background-image: url('/img/envelope-at-fill.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#input-numeroCelular::placeholder{
+    background-image: url('/img/telephone-fill.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
 #selectSexo{
     width: 100%;
     font-size: 16px;
@@ -130,6 +151,8 @@ body{
 
 
 @media screen and (min-width:720px) {
+    
+
     .cadastro__pai{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

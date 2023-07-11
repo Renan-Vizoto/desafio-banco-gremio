@@ -26,7 +26,7 @@
         <form id="formulario">
             <div class="cadastro">
                 <div class="cadastro__pai perfil">
-                    <h2>Perfil</h2>
+                    <h2><img src="/img/person-fill.svg">Perfil</h2>
                     <div class="cadastro-input nome">
                         <p class="cadastro-input__titulo">Nome</p>
                         <input type="text" class="cadastro-input__text" id="input-nome" placeholder="Ex: Izabella"
@@ -70,6 +70,9 @@
                         <p class="cadastro-input__titulo">Senha</p>
                         <input type="password" class="cadastro-input__text" id="input-senha" minlength="8"
                             maxlength="20" required>
+                        <span id="passwordHelpInline" class="form-text">
+                            Deve conter de 8-20 caracteres.
+                        </span>
                     </div>
                     <div class="cadastro-input senha2">
                         <p class="cadastro-input__titulo">Confirme sua Senha</p>
@@ -96,7 +99,7 @@
                 </div>
 
                 <div class="cadastro__pai endereco">
-                    <h2>Endereço</h2>
+                    <h2><img src="/img/house-fill.svg">Endereço</h2>
                     <div class="cadastro-input">
                         <p class="cadastro-input__titulo">CEP</p>
                         <input type="text" class="cadastro-input__text" id="input-cep" placeholder="Ex: 11818-090"
@@ -142,7 +145,7 @@
             </div>
 
             <div class="checkbox">
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox" required>
                 <p>Declaro que li os <a href="#">termos de uso</a> e concordo que o Grêmio é o maior do Sul.</p>
             </div>
 
@@ -150,10 +153,10 @@
                 <button form="formulario" type="submit" id="botao" class="botao">Cadastre-se</button>
             </div>
         </form>
-        <form>
+        <!-- <form>
             <input type="text" required>
             <button type="submit">Enviar</button>
-        </form>
+        </form> -->
     </section>
 
 
