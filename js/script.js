@@ -70,7 +70,6 @@ formulario.addEventListener('submit', function(event) {
     }
 });
 
-
 //nome
 const inputNome = document.getElementById("input-nome");
 
@@ -93,8 +92,6 @@ inputSobrenome.addEventListener("keypress", function(novoSobrenome) {
   }
 });
 
-
-
 //novo cpf
 const erroMensagemCPF = document.getElementById('erro-mensagemCPF');
 let strCPF = document.getElementById('input-cpf')
@@ -102,7 +99,6 @@ strCPF.addEventListener('blur',function() {
     validarCPF(strCPF)
 });
 let validade = 1;
-
 
 //menor de idade
 let calculaDataNasc = document.getElementById('input-dataNasc');
@@ -115,11 +111,11 @@ const inputCpfResp = document.getElementById('inputCpfResp');
 
 //nome Responsavel
 inputNomeResp.addEventListener("keypress", function(novoNome) {
-  const key = String.fromCharCode(novoNome.keyCode);
+    const key = String.fromCharCode(novoNome.keyCode);
 
-  if (/[^a-zA-Z]/.test(key)) {
-    novoNome.preventDefault();
-  }
+    if (/[^a-zA-Z]/.test(key)) {
+        novoNome.preventDefault();
+    }
 });
 
 //novo cpf responsavel
@@ -132,6 +128,9 @@ inputCpfResp.addEventListener('blur',function() {
 inputCpfResp.addEventListener('input', function(){
     formatarCPF(inputCpfResp)
 });
+
+//submit
+
 
 
 
@@ -315,3 +314,9 @@ function calcCredito() {
 
     document.getElementById('input-credito').value = `R$ ${credito}`
 }
+
+
+// const submit = document.getElementById('botao');
+// submit.addEventListener('click', function() {
+//     window.location.href = 'aprovado.html';
+// });
